@@ -1,0 +1,372 @@
+/* --- Estilo General del Cuerpo de la Página --- */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-image: url('../imagenes/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* --- Encabezado --- */
+.rectangulo-transparente {
+    background-color: rgba(60, 130, 80, 0.406);
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100px;
+
+}
+
+/* --- Estilo del Contenedor de la Cabecera --- */
+header {
+    width: 100%;
+    padding: 0;
+}
+
+/* --- Contenedor del Logo y el Título --- */
+.header-container,
+.logo-titulo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    justify-content: space-between;
+}
+
+.logo-titulo-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+    z-index: 1001;
+}
+
+.titulo-con-marco {
+    border: 3px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(80, 174, 97, 0.8);
+}
+
+
+/* --- Estilo de la Navegación --- */
+nav {
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(60, 130, 80, 0.9);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    margin-top: 150px;
+    /* Altura del rectángulo transparente */
+    padding: 10px 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Añade sombra para destacar */
+}
+
+/* --- Reproductor de Audio --- */
+.reproductor-audio {
+    text-align: center; /* Centra el reproductor horizontalmente */
+    margin-top: 20px; /* Espaciado respecto al nav */
+}
+
+.reproductor-audio audio {
+    background-color: rgba(60, 130, 80, 0.9); /* Fondo verde */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 80%; /* Tamaño ajustado para dispositivos */
+    max-width: 600px; /* Ancho máximo */
+}
+
+
+/* --- Frase Personalizada --- */
+.frase-personalizada {
+    font-style: italic;
+    text-align: center;
+    margin: 50px;
+    font-size: 1.2em;
+}
+
+/* --- Cuadros de Productos --- */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px; /* Espacio entre los productos */
+}
+
+
+.producto1 {
+    background-color: #d9811bfd;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.producto2 {
+    background-color: #b155f2;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.producto3 {
+    background-color: #ffc42e;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.producto4 {
+    background-color: #ff5aec;
+    color: #f8f8f8;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.producto5 {
+    background-image: url('../imagenes/Fondo-Producto-5.gif');
+    color: #820030;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.producto6 {
+    background-image: url('../imagenes/Fondo-Producto-6.jpeg'); /* Agrega la imagen de fondo */
+    color: #2c2c2c;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative; /* Necesario para posicionar las orejas */
+}
+
+/* Orejas */
+.producto6::before,
+.producto6::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff; /* Mismo color que el cuadro */
+    border: 2px solid rgb(118, 118, 118);
+    border-radius: 50%;
+    position: absolute;
+    top: -20px; /* Mueve las orejas hacia arriba */
+}
+
+.producto6::before {
+    left: -10px; /* Posiciona la oreja izquierda */
+}
+
+.producto6::after {
+    right: -10px; /* Posiciona la oreja derecha */
+}
+
+.producto7 {
+    background-color: #d6d6d6;
+    background-image: url('../imagenes/Fondo-Producto-7.gif');
+    color: #610024fe;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.producto-img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 300px;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Asegura que las imágenes se recorten proporcionalmente sin distorsión */
+    border-radius: 10px;
+    /* Mantiene bordes redondeados si los cuadros tienen este estilo */
+}
+
+.producto-info {
+    margin: 10px 0 0;
+    font-weight: bold;
+}
+
+/* --- Sección de Contacto --- */
+.contacto {
+    background-color: rgba(60, 130, 80, 0.9);
+    padding: 8px;
+    text-align: center;
+    margin-top: auto;
+    /* Empuja al final de la página */
+}
+
+.contacto h2 {
+    margin-bottom: 5px;
+}
+
+.contacto p {
+    margin: 5px 0;
+}
+
+.contacto-link {
+    color: #ffecb3;
+    /* Amarillo claro */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos Responsivos para Tabletas (Pantallas mayores a 768px) --- */
+@media (max-width: 1024px) {
+    nav {
+        width: 90%;
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    .productos {
+        gap: 15px;
+    }
+    
+    .producto1,
+    .producto2,
+    .producto3,
+    .producto4,
+    .producto5,
+    .producto6,
+    .producto7 {
+        width: 180px;
+        /* Ajusta el tamaño de los cuadros para pantallas más pequeñas */
+        padding: 8px;
+    }
+}
+
+/* --- Estilos Responsivos para Teléfonos (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+    .rectangulo-transparente {
+        height: 80px;
+        /* Reduce la altura del encabezado */
+        padding: 5px;
+    }
+
+    nav {
+        width: 95%;
+        font-size: 16px;
+        padding: 8px;
+        margin-top: 100px;
+        /* Ajusta el espacio debajo del encabezado */
+    }
+
+    .frase-personalizada {
+        font-size: 1em;
+        margin: 20px;
+    }
+
+    .productos {
+        gap: 15px;
+    }
+    
+    .producto1,
+    .producto2,
+    .producto3,
+    .producto4,
+    .producto5,
+    .producto6,
+    .producto7 {
+        width: 180px;
+        /* Ajusta el tamaño de los cuadros para pantallas más pequeñas */
+        padding: 8px;
+    }
+
+    .contacto {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* --- Estilos para Teléfonos Muy Pequeños (Pantallas menores a 480px) --- */
+@media (max-width: 480px) {
+    .rectangulo-transparente {
+        height: 85px;
+        padding: 3px;
+    }
+
+    .logo {
+        height: 40px;
+        /* Reduce el tamaño del logo */
+    }
+
+    nav {
+        font-size: 14px;
+    }
+
+    .frase-personalizada {
+        font-size: 0.9em;
+    }
+
+    .producto1,
+    .producto2,
+    .producto3,
+    .producto4,
+    .producto5,
+    .producto6,
+    .producto7 {
+        width: 70%;
+        /* Casi todo el ancho */
+    }
+
+    .contacto {
+        font-size: 0.8em;
+    }
+}
