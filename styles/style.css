@@ -1,0 +1,355 @@
+/* Reset y Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --bg: #ffffff;
+  --fg: #111;
+  --fg-light: #555;
+  --fg-light-2: #ffffff;
+  --accent-green: #3a7d44;
+  --accent-green-dark: #026d16;
+  --accent-green-light: rgba(58, 125, 68, 0.1);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base */
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-green-dark);
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--fg);
+}
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--fg);
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+.nav a:hover,
+.nav a.active {
+  color: var(--accent-green);
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  left: 50%;
+  background: var(--accent-green);
+  transition: width 0.3s, left 0.3s;
+}
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Social */
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2px solid var(--accent-green-dark);
+  border-radius: 50%;
+  margin-left: 1rem;
+  color: var(--accent-green-dark);
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.social a:hover {
+  background: var(--accent-green);
+  color: var(--bg);
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Hero */
+.hero {
+  height: 60vh;
+  background: url('/images/background/background.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(58, 125, 68, 0.15);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--fg-light-2);
+}
+.btn {
+  text-decoration: none;
+  color: var(--bg);
+  background: var(--accent-green);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn:hover {
+  background: var(--accent-green-dark);
+  transform: translateY(-3px);
+}
+
+/* ---------- Slider de Imágenes ---------- */
+.product-images {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.product-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.product-images img.active {
+  opacity: 1;
+}
+
+/* Etiqueta de stock */
+.stock {
+  font-size: 0.9rem;
+  margin: 0.5rem 1rem;
+  font-weight: 500;
+  color: var(--accent-green-dark);
+}
+.stock:empty {
+  display: none;
+}
+
+/* Grid de Productos */
+.product-grid {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  padding: 0 1rem;
+}
+
+/* Tarjeta de Producto */
+.product-card {
+  background: var(--bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--accent-green-light);
+}
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.product-card h3 {
+  margin: 1rem;
+  font-size: 1.25rem;
+}
+.product-card .price {
+  margin: 0 1rem;
+  font-weight: 700;
+  color: var(--accent-green);
+}
+.product-card .desc {
+  margin: 0.5rem 1rem 1rem;
+  color: var(--fg-light);
+  flex-grow: 1;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px var(--shadow);
+  border-color: var(--accent-green-dark);
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal overlay */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+/* Caja del modal */
+.modal-content {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  font-family: var(--font-sans);
+}
+
+/* Botón cerrar (×) */
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--fg-light);
+}
+
+/* Botones de acción */
+.btn-primary {
+  background: var(--accent-green);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: var(--accent-green-dark);
+}
+
+.btn-secondary {
+  background: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-secondary:hover {
+  background: #bbb;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Cabecera: menú a la izquierda, logo centrado, social a la derecha */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 1;
+    margin-right: 1rem;
+  }
+
+  .logo {
+    order: 2;
+    flex: 1;
+    text-align: center;
+  }
+
+  .social {
+    order: 3;
+  }
+
+  /* Navegación colapsada: igual que antes */
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav.open {
+    max-height: 240px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .nav a {
+    padding: 1rem;
+  }
+}
+

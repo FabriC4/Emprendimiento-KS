@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Tienda</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+
+<body>
+  <!-- Header y Navegación -->
+  <header class="header">
+    <div class="logo">Sys Artículos</div>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav class="nav">
+      <ul>
+        <li><a href="#" data-category="all" class="active">Todos</a></li>
+        <li><a href="#" data-category="velas">Velas</a></li>
+        <li><a href="#" data-category="promociones">Sets</a></li>
+        <li><a href="#" data-category="joyas">Joyas</a></li>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="https://www.instagram.com/sysarticulos?utm_source=ig_web_button_share_sheet&igsh=NDdwOHQza2R0eXhn" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5493764734036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section class="hero reveal">
+    <div class="hero-content">
+      <h1>Sys Artículos</h1>
+      <p>Velas aromáticas · Labiales · Joyas</p>
+      <a href="#productos" class="btn">Ver catálogo</a>
+    </div>
+  </section>
+
+  <main id="productos" class="product-grid">
+    <!-- Vela 1: Ejemplo de tarjeta con 3 imágenes -->
+    <div class="product-card reveal" data-category="velas" data-id="Vela Wiskera" data-name="Vela-Wiskera"
+      data-price="10.000">
+      <div class="product-images">
+        <img src="/images/velas/Vela-Wiskera.jpg" alt="Vela Wiskera 1">
+        <img src="/images/velas/Vela-Wiskera-2.jpg" alt="Vela Wiskera 2">
+        <img src="/images/velas/Vela-Wiskera-3.jpg" alt="Vela Wiskera 3">
+      </div>
+      <h3>Vela wiskera "LOVE" c/tapa Aromas(sandia-melón)</h3>
+      <p class="price">$10.000</p>
+      <p class="desc">Para relajación y buen aroma</p>
+
+      <a href="#" class="btn order-btn">Ordenar</a>
+    </div>
+
+    <!-- Set Maekup -->
+      <div class="product-card reveal" data-category="promociones" data-id="Set MAKEUP" data-name="Set-Makeup"
+      data-price="25.000">
+      <div class="product-images">
+        <img src="/images/Set/Mini_set_MAKEUP.jpg" alt="set_Makeup">
+      </div>
+      <h3>Mini set "MAKEUP"</h3>
+      <p class="price">$25.000</p>
+      <p class="desc">(Base+labial+rimel negro+ velita aromática)</p>
+
+      <a href="#" class="btn order-btn">Ordenar</a>
+    </div>
+
+    <!-- Joyas -->
+      <div class="product-card reveal" data-category="joyas" data-id="Joyas de acero" data-name="Joyas Acero"
+      data-price="Consultar">
+      <div class="product-images">
+        <img src="/images/Joyas/Joyas_Acero_1.jpg" alt="Joyas_ Acero_1">
+        <img src="/images/Joyas/Joyas_Acero_2.jpg" alt="Joyas_ Acero_2">
+        <img src="/images/Joyas/Joyas_Acero_3.jpg" alt="Joyas_ Acero_3">
+      </div>
+      <h3>Mini set "MAKEUP"</h3>
+      <p class="price">Consultar</p>
+      <p class="desc">Para regalar o regalarte, con precios inigualables.</p>
+
+      <a href="#" class="btn order-btn">Ordenar</a>
+    </div>
+
+    <!-- Set Maekup -->
+      <div class="product-card reveal" data-category="promociones" data-id="Set Aromatico" data-name="Set-Aromatico"
+      data-price="Consultar">
+      <div class="product-images">
+        <img src="/images/Set/Set_Aromático.jpg" alt="Set_Aromatico">
+      </div>
+      <h3>Set Aromático</h3>
+      <p class="price">Consultar</p>
+      <p class="desc">(Difusor c/varillas+Aromatizador+Organizador,100% chocolate)</p>
+
+      <a href="#" class="btn order-btn">Ordenar</a>
+    </div>
+
+    <!-- Más tarjetas según tu catálogo -->
+  </main>
+
+
+  <script src="/ScriptJS/script.js"></script>
+
+  <!-- Modal de confirmación -->
+  <div id="order-modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <p id="modal-message"></p>
+      <div class="modal-buttons">
+        <button id="modal-cancel" class="btn-secondary">Cancelar</button>
+        <button id="modal-confirm" class="btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
